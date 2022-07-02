@@ -1,0 +1,68 @@
+[
+    {
+        "fullName": {
+            "name": "John",
+            "lastName": "Doe"
+        },
+        "age": 21,
+        "email": "john@email.com",
+        "phone": 1234567890,
+        "hobbies": [
+            "code",
+            "read",
+            "sleep"
+        ],
+        "address": {
+            "state": "California",
+            "city": "San Francisco"
+        },
+        "active": true,
+        "friends": [
+            {
+                "username": "David",
+                "age": 23
+            },
+            {
+                "username": "William",
+                "age": 25
+            },
+            {
+                "username": "Ian",
+                "age": 28
+            }
+        ]
+    },
+    {
+        "fullName": {
+            "name": "David",
+            "lastName": "Davidson"
+        },
+        "age": 23,
+        "email": "david@email.com",
+        "phone": 1234567890,
+        "hobbies": [
+            "code",
+            "read",
+            "sleep"
+        ],
+        "address": {
+            "state": "California",
+            "city": "San Francisco"
+        },
+        "active": true,
+        "friends": [
+            {
+                "username": "John",
+                "age": 21
+            },
+            {
+                "username": "William",
+                "age": 25
+            },
+            {
+                "username": "Ian",
+                "age": 28
+            }
+        ]
+    }
+]

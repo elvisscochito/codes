@@ -101,6 +101,7 @@ SELECT min(age) as max_age_user FROM users;
 
 SELECT id, max(age) as age, email FROM users GROUP BY id, age, email LIMIT 1;
 
+-- TODO: begin
 SELECT U.id, U.email, P.name FROM users AS U JOIN product AS P ON U.id = P.created_by; -- INNER JOIN, LEFT and RIGHT JOIN are also available
 
 SELECT P.id, P.name, U.id, U.name FROM product AS P CROSS JOIN users AS U;
@@ -108,6 +109,8 @@ SELECT P.id, P.name, U.id, U.name FROM product AS P CROSS JOIN users AS U;
 SELECT COUNT(id), brand FROM product GROUP BY brand;
 
 SELECT COUNT(P.id), U.name FROM product AS P JOIN users AS U ON U.id = P.created_by GROUP BY P.created_by HAVING COUNT(P.id) >= 2;
+
+-- TODO: end
 
 -- +------------------------------------------------------------------------------------------+
 
