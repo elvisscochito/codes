@@ -18,7 +18,7 @@ JSON validator: [link](https://jsonlint.com "JSONLint")
 * JSON format the data so it can be display everywhere
 * Based in JavaScript but it works with almost any programming language
 * Also used with AJAX
-* Support multi data types like numbers, strings boolean, arrays, object (key/value pairs), null and so much more but methods, functions aren't allowed
+* Support multi data types like numbers, strings, null, boolean, arrays, object (key/value pairs), null and so much more but methods, functions aren't allowed
 * Key : value structured, double quotes is required in key, and value assignment is needed too
 * A comma after any key/value pair is required except the last one
 * The data piece it's closed between curly braces

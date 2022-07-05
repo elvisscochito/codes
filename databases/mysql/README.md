@@ -23,3 +23,5 @@ Import and export the database: [link](https://www.interserver.net/tips/kb/impor
     * ![screen-shot.png](screen-shot.png "ss")
     * ![screen-shot2.png](screen-shot2.png "ss2")
 * Normalize tables (by they own entities)
+
+check this out: https://www.informit.com/articles/article.aspx?p=30875&seqNum=4

@@ -1,0 +1,40 @@
+[
+    {
+        "fullName": {
+            "name": "Ian",
+            "lastName": "Crawford"
+        },
+        "username": "ian",
+        "email": "ian@email.com",
+        "phone": 1234567890,
+        "age": 21,
+        "address": {
+            "state": "California",
+            "city": "San Francisco"
+        },
+        "hobbies": [
+            "code", 
+            "read", 
+            "sleep"
+        ]
+    },
+    {
+        "fullName": {
+            "name": "David",
+            "lastName": "Davidson"
+        },
+        "username": "david",
+        "email": "david@email.com",
+        "phone": 1234567890,
+        "age": 23,
+        "address": {
+            "state": "California",
+            "city": "San Diego"
+        },
+        "hobbies": [
+            "code",
+            "read",
+            "sleep"
+        ]
+    }
+]
