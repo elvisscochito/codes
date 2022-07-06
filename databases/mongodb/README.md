@@ -73,8 +73,8 @@ db.getCollectionNames()
 
 __create/insert a new document(record) into a collection__:
 ```
-db.collection.insertOne()
-db.collection.insertMany()
+db.collection.insertOne() - one document at a time with {}
+db.collection.insertMany() -- array of documents with [{}]
 db.collection.insert() - older versions
 ```
 
@@ -153,14 +153,110 @@ db.collection.find({"key": {$type: "int/string/object/array/bool/null/date"}}) -
 
 db.collection.find({$or: [{"key": {$gt: value}}, {"key": "value"}]}) - OR, it search and returns only documents that match one or all of the filters
 
-db.collection.find({"key": {$regex: "value"}}) - search with a regular expression
+db.collection.find({$nor: [{"key": {$gt: value}}, {"key": "value"}]}) - NOR, it search and returns only documents that don't match one or all of the filters
+
+db.collection.find({$expr: {$gt: ["$key", "$key"]}}) - do a add operation on a field and return the result (dolar sign syntax allow access to the column/value itself)
+
+/* ({{$add: ["$key", "$key"]}}) - do a add operation on a field and return the result https://www.mongodb.com/docs/manual/reference/operator/aggregation/addFields/#std-label-add-field-to-embedded
+
+db.collection.find({"key": {$regex: "value"}}) - search with a regular expression */
+```
+
+### __UPDATE__
+
+__update a document in a collection__:
+```json
+db.collection.updateOne({"key": "value"}, {$set: {"key": "value"}}) - update the first one document
+/* db.collection.update({"key": "value"}, {$set: {"key": "value"}}) - older versions */
+```
+
+__update based on the _id key/value field__:
+```json
+db.collection.updateOne({"_id": ObjectId("62c350329a7f24282c541aad")}, {$set: {"key": "value"}})
+```
+
+__increment a value in a specific field by positive (value) or negative values (-value)__:
+```json 
+db.collection.updateOne({"_id": ObjectId("62c350329a7f24282c541aad")}, {$inc: {"key": value}})
+```
+
+__update all documents that match the filter,  requires atomic operators__:
+```json 
+db.collection.updateMany({"key": "value"}, {$inc: {"key": value}}) /* - example with complex filter: db.user.updateMany({"balance": {$exists: true}}, {$set: {"debit": 500}}) */
+```
+
+__update all documents that match the filter but with conditions)__:
+```json
+/* db.collection.updateOne()
+db.collection.updateMany({}, [{$set: {"key": {$eq: ["$key", "value"]}}}])
+https://stackoverflow.com/questions/36698569/mongodb-update-with-condition */
+```
+
+__rename a field__:
+```json 
+db.collection.updateMany({}, {$rename: {"key": "newKey"}})
+/* db.collection.updateOne({"key": "value"}{$rename: {"key": "newKey"}}) - doesn't make sense */
+```
+
+__unset and remove a key/value field from a document__:
+```json
+db.collection.updateOne({"key": "value"}, {$unset: {"key": ""}}) - need an empty string to work
+```
+
+__add a new key/value field in a document (also works with $addFields)__:
+```json
+db.collection.updateOne({"key": "value"}, {$set: {"key": "value"}}) - need a key and a value to work
+```
+
+__add a new value into a key of an array field in a document__:
+```json
+db.collection.updateOne({"key": "value"}, {$push: {"key": "value"}}) - one value by time 
+
+db.collection.updateOne({"key": "value"}, {$push: {"key": {$each: ["value", "value"]}}}) - add multiple values at the same time
+```
+
+__replace all info inside the document with the indicate one (it choose the first match):__
+```json
+db.collection.replaceOne({"key": "value"}, {"key": "value", "key": "value"})
+```
+
+__remove a value from a key of an array field in a document__:
+```json
+db.collection.updateOne({"key": "value"}, {$pull: {"key": "value"}}) - one value by time, remove at one all duplicates
 ```
 
 ### __DELETE__
 
+__delete first one document:__
+```json
+db.collection.deleteOne({"key": "value"})
+```
+
+__delete all documents:__
+```json
+db.collection.deleteMan({"key": "value"})
+```
+
 __delete a database:__
 ```
 db.dropDatabase()
+```
+
+### __Other__
+
+__search and delete the first one document:__
+```json
+db.collection.findOneAndDelete({"key": "value"})
+```
+
+__search and update the first one document:__
+```json
+db.collection.findOneAndUpdate({"key": "value"}, [{$set: {"key": "value"}}], {returnNewDocument: true})
+```
+
+__search and replace the first one document:__
+```json
+db.collection.findOneAndReplace({"key": "value"}, {"key": "value", "key": "value"}, {returnNewDocument: true})
 ```
 
 __display all commands:__
