@@ -59,8 +59,8 @@ use database
 
 __create a collection:__
 ```json
-db.newCollection.insert({"key": "value"})
 db.createCollection("Collection")
+db.newCollection.insert({"key": "value"})
 ```
 
 ### __READ__
@@ -234,7 +234,12 @@ db.collection.deleteOne({"key": "value"})
 
 __delete all documents:__
 ```json
-db.collection.deleteMan({"key": "value"})
+db.collection.deleteMany({"key": "value"})
+```
+
+__delete a collection:__
+```json
+db.collection.drop()
 ```
 
 __delete a database:__
