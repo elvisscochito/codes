@@ -6,7 +6,7 @@ pictures_path = "/Users/elvirodominguezsoriano/Pictures/"
 music_path = "/Users/elvirodominguezsoriano/Music/"
 movies_path = "/Users/elvirodominguezsoriano/Movies/"
 
-pics = [".Jpg", ".JPG", ".jpeg", ".JPEG", ".png", ".PNG"]
+pics = [".jpg", ".JPG", ".jpeg", ".JPEG", ".png", ".PNG"]
 music = [".mp3", ".MP3", ".m4p", ".M4P"]
 movies = [".mp4", ".MP4", ".mov", ".MOV"]
 
