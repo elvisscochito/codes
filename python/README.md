@@ -12,7 +12,7 @@
 > brew install pyenv <!-- (optional, recommended for different environments, it means tools and versions of python) -->
 
 <!-- access to pyenv and install directly from its prompt: -->
-> python3-m venv venv
+> python3 -m venv venv
 > . venv/bin/activate
 > pip install package/library
 
