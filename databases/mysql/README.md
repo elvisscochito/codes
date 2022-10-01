@@ -6,6 +6,8 @@ Source tutorial: [link](https://www.youtube.com/watch?v=uUdKAYl-F7g "Youtube")
 
 Download mysql: [link](https://dev.mysql.com/downloads/mysql/ "Installation")
 
+Download mysql workbench: [link](https://dev.mysql.com/downloads/workbench/ "Installation")
+
 Run mysql in mac terminal: [link](https://www.youtube.com/watch?v=ryvNDIX3gQA "Youtube")
 
 > cd /usr/local/mysql/bin/; ls
