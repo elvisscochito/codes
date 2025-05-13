@@ -16,7 +16,9 @@
 
 <!-- access to pyenv and install directly from its prompt: -->
 > python3 -m venv ~/.venv
+
 > source ~/.venv/bin/activate
+
 > pip3 install package/library
 
 > python3 file-name.py
