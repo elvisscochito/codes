@@ -31,3 +31,9 @@
 
 <!-- launch different python version from terminal -->
 > python3x.x
+
+## NOTES:
+
+Homebrew:
+>  python3 -m streamlit run streamlit_app.py
+> python -m pip install 
