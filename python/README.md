@@ -37,4 +37,6 @@
 Homebrew:
 >  python3 -m streamlit run streamlit_app.py
 
-> python -m pip install 
+> python -m pip install
+
+> python3 -m pip install
